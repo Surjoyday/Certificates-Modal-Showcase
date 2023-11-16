@@ -2,7 +2,7 @@
 
 This project showcases a modal window developed using JavaScript and the Document Object Model (DOM). The modal window displays my collection of e-learning certificates earned up until October 2023.
 
-**Project Link: [Your Project Link Here](https://surjoyday.github.io/Certificates-Modal-Showcase/)**
+**Project Link: [Certificates-Modal-Showcase](https://surjoyday.github.io/Certificates-Modal-Showcase/)**
 ## Overview
 
 The modal window is a visual representation of my e-learning journey, presenting certificates earned throughout the year. It is created using JavaScript and DOM manipulation techniques.
