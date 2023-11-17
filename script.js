@@ -9,22 +9,13 @@ const modal = (idx) => document.querySelector(`.modal-${idx}`);
 
 let currentModalIndex = -1;
 
-//! Function show modal
+//! Function toogle modal
 
-const showModal = (idx) => {
+const toggleModal = (idx) => {
   if (modal(idx)) {
-    modal(idx).classList.remove("hidden");
-    overlay.classList.remove("hidden");
+    modal(idx).classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
     currentModalIndex = idx - 1;
-  }
-};
-
-//! Function hide modal
-const hideModal = (idx) => {
-  if (modal(idx)) {
-    modal(idx).classList.add("hidden");
-    overlay.classList.add("hidden");
-    currentModalIndex = -1;
   }
 };
 
@@ -32,7 +23,7 @@ const hideModal = (idx) => {
 for (let i = 0; i < showModalBtns.length; i++) {
   showModalBtns[i].addEventListener("click", function () {
     console.log("btn clicked");
-    showModal(i + 1);
+    toggleModal(i + 1);
   });
 }
 
@@ -41,7 +32,7 @@ for (let i = 0; i < showModalBtns.length; i++) {
 for (let i = 0; i < closeModalBtns.length; i++) {
   closeModalBtns[i].addEventListener("click", function () {
     console.log("close btn clicked");
-    hideModal(i + 1);
+    toggleModal(i + 1);
   });
 }
 
@@ -50,9 +41,11 @@ for (let i = 0; i < closeModalBtns.length; i++) {
 overlay.addEventListener("click", function () {
   console.log("overlay clicked");
   if (currentModalIndex !== -1) {
-    hideModal(currentModalIndex + 1);
+    toggleModal(currentModalIndex + 1);
   }
 });
+
+//! ESC CLICK CLOSE
 
 document.addEventListener("keydown", function (e) {
   console.log(e);
